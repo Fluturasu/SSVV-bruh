@@ -1,0 +1,24 @@
+Tema: 1
+Nota: 10.0
+Predata in saptamana: 7
+Deadline: 7
+Feedback: done
+
+Tema: 2
+Nota: 7.5
+Predata in saptamana: 9
+Deadline: 8
+Feedback: done
+
+Tema: 3
+Nota: 1.0
+Predata in saptamana: 14
+Deadline: 9
+Feedback: boss
+
+Tema: 4
+Nota: 5.0
+Predata in saptamana: 10
+Deadline: 10
+Feedback: bruh
+
