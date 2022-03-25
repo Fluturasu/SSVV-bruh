@@ -6,10 +6,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import repository.*;
-import validation.NotaValidator;
-import validation.StudentValidator;
-import validation.TemaValidator;
-import validation.Validator;
+import validation.*;
+import validation.ValidationException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -53,6 +51,14 @@ class ServiceTest {
         assertEquals(returnValue, 1);
     }
 
+    @Test
+    void saveStudentWithEmptyId() {
+        String id = "";
+        String nume = "andrei";
+        int grupa = 933;
+        int returnValue = service.saveStudent(id, nume, grupa);
+        assertEquals(returnValue, 1);
+    }
 
 
     @Test
