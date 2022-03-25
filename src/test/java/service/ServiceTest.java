@@ -60,6 +60,14 @@ class ServiceTest {
         assertEquals(returnValue, 1);
     }
 
+    @Test
+    void saveStudentWithEmptyName() {
+        String id = "castravete";
+        String nume = "";
+        int grupa = 499;
+        int returnValue = service.saveStudent(id, nume, grupa);
+        assertEquals(returnValue, 1);
+    }
 
     @Test
     void saveStudentId() {
