@@ -144,6 +144,41 @@ class ServiceTest {
 
 
     @Test
+    void saveStudentWithMaxBoundaryGroup() {
+        String id = "999999";
+        String nume = "2";
+        int grupa = 937;
+        int returnValue = service.saveStudent(id,nume,grupa);
+        assertEquals(returnValue, 1);
+        assertNotNull(fileRepository1.findOne(id));
+    }
+
+
+    @Test
+    void saveStudentWithValueAboveMaxBoundaryGroup() {
+        String id = "999999";
+        String nume = "2";
+        int grupa = 938;
+        int returnValue = service.saveStudent(id,nume,grupa);
+        assertEquals(returnValue, 1);
+        assertNull(fileRepository1.findOne(id));
+    }
+
+
+    @Test
+    void saveStudentWithValueBelowMaxBoundaryGroup() {
+        String id = "999999";
+        String nume = "2";
+        int grupa = 936;
+        int returnValue = service.saveStudent(id,nume,grupa);
+        assertEquals(returnValue, 1);
+        assertNotNull(fileRepository1.findOne(id));
+    }
+
+
+
+
+    @Test
     void saveStudentId() {
         String id = "-1";
         int returnValue = service.saveStudent(id, "bruhtest", 222);
