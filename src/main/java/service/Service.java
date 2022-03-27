@@ -4,6 +4,7 @@ import domain.*;
 import repository.*;
 import validation.StudentValidator;
 import validation.TemaValidator;
+import validation.ValidationException;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -30,11 +31,15 @@ public class Service {
     public Iterable<Nota> findAllNote() { return notaXmlRepo.findAll(); }
 
     public int saveStudent(String id, String nume, int grupa) {
-        Student student = new Student(id, nume, grupa);
-        Student result = studentXmlRepo.save(student);
+        try{
+            Student student = new Student(id, nume, grupa);
+            Student result = studentXmlRepo.save(student);
 
-        if (result == null) {
-            return 1;
+            if (result == null) {
+                return 1;
+            }
+        } catch (ValidationException e) {
+            System.out.println("Entitatea nu este valida!\n");
         }
         return 0;
     }
