@@ -8,6 +8,10 @@
         <Nume>Maria</Nume>
         <Grupa>222</Grupa>
     </student>
+    <student ID="999999">
+        <Nume>2</Nume>
+        <Grupa>111</Grupa>
+    </student>
     <student ID="4">
         <Nume>Ion</Nume>
         <Grupa>227</Grupa>
@@ -19,6 +23,10 @@
     <student ID="5">
         <Nume>Bruh</Nume>
         <Grupa>222</Grupa>
+    </student>
+    <student ID="asdads">
+        <Nume>asdasd</Nume>
+        <Grupa>111</Grupa>
     </student>
     <student ID="10">
         <Nume>aaa</Nume>
