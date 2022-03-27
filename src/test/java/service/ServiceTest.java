@@ -120,6 +120,29 @@ class ServiceTest {
         assertNotNull(fileRepository1.findOne(id));
     }
 
+
+    @Test
+    void saveStudentWithValueAboveMinBoundaryGroup() {
+        String id = "999999";
+        String nume = "2";
+        int grupa = 112;
+        int returnValue = service.saveStudent(id,nume,grupa);
+        assertEquals(returnValue, 1);
+        assertNotNull(fileRepository1.findOne(id));
+    }
+
+
+    @Test
+    void saveStudentWithValueBelowMinBoundaryGroup() {
+        String id = "999999";
+        String nume = "2";
+        int grupa = 110;
+        int returnValue = service.saveStudent(id,nume,grupa);
+        assertEquals(returnValue, 1);
+        assertNull(fileRepository1.findOne(id));
+    }
+
+
     @Test
     void saveStudentId() {
         String id = "-1";
