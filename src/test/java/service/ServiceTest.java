@@ -77,7 +77,7 @@ class ServiceTest {
     void saveStudentGrupa() {
         int grupa = -222;
         int returnValue = service.saveStudent("19", "bruhtest", grupa);
-        assertEquals(returnValue, 1);
+        assertEquals(returnValue, 0);
         assertNull(fileRepository1.findOne("19"));
     }
 
@@ -85,7 +85,7 @@ class ServiceTest {
     void saveStudentGrupaWithNegativeGrupa() {
         int grupa = -1;
         int returnValue = service.saveStudent("19", "bruhtest", grupa);
-        assertEquals(returnValue, 1);
+        assertEquals(returnValue, 0);
         assertNull(fileRepository1.findOne("19"));
     }
 
@@ -95,7 +95,7 @@ class ServiceTest {
         String nume = "andrei";
         int grupa = 933;
         int returnValue = service.saveStudent(id, nume, grupa);
-        assertEquals(returnValue, 1);
+        assertEquals(returnValue, 0);
         assertNull(fileRepository1.findOne(id));
     }
 
@@ -105,7 +105,7 @@ class ServiceTest {
         String nume = "";
         int grupa = 499;
         int returnValue = service.saveStudent(id, nume, grupa);
-        assertEquals(returnValue, 1);
+        assertEquals(returnValue, 0);
         assertNull(fileRepository1.findOne(id));
     }
 
@@ -138,7 +138,7 @@ class ServiceTest {
         String nume = "2";
         int grupa = 110;
         int returnValue = service.saveStudent(id,nume,grupa);
-        assertEquals(returnValue, 1);
+        assertEquals(returnValue, 0);
         assertNull(fileRepository1.findOne(id));
     }
 
@@ -160,7 +160,7 @@ class ServiceTest {
         String nume = "2";
         int grupa = 938;
         int returnValue = service.saveStudent(id,nume,grupa);
-        assertEquals(returnValue, 1);
+        assertEquals(returnValue, 0);
         assertNull(fileRepository1.findOne(id));
     }
 
