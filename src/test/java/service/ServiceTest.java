@@ -185,4 +185,25 @@ class ServiceTest {
         assertEquals(returnValue, 1);
         assertNotNull(fileRepository1.findOne(id));
     }
+
+
+
+
+    @Test
+    void saveTemaWithInvalidId() {
+        String id = null;
+        String descriere = "ok";
+        int deadline = 14;
+        int startline = 1;
+        assertThrows(ValidationException.class, () -> service.saveTema(id, descriere, deadline, startline));
+    }
+
+    @Test
+    void saveTemaWithInvalidDescription() {
+        String id = "null";
+        String descriere = null;
+        int deadline = 14;
+        int startline = 1;
+        assertThrows(ValidationException.class, () -> service.saveTema(id, descriere, deadline, startline));
+    }
 }
