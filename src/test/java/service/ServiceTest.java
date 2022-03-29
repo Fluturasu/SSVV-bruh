@@ -201,7 +201,7 @@ class ServiceTest {
 
     @Test
     void saveTemaWithValidId() {
-        String id = 1;
+        String id = "1";
         String descriere = "ok";
         int deadline = 14;
         int startline = 1;
