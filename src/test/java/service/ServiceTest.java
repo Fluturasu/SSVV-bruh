@@ -198,6 +198,17 @@ class ServiceTest {
         assertThrows(ValidationException.class, () -> service.saveTema(id, descriere, deadline, startline));
     }
 
+
+    @Test
+    void saveTemaWithValidId() {
+        String id = null;
+        String descriere = "ok";
+        int deadline = 14;
+        int startline = 1;
+        assertThrows(ValidationException.class, () -> service.saveTema(id, descriere, deadline, startline));
+    }
+
+
     @Test
     void saveTemaWithInvalidDescription() {
         String id = "null";
