@@ -205,7 +205,8 @@ class ServiceTest {
         String descriere = "ok";
         int deadline = 14;
         int startline = 1;
-        assertThrows(ValidationException.class, () -> service.saveTema(id, descriere, deadline, startline));
+        service.saveTema(id, descriere, deadline, startline);
+        assertNotNull(fileRepository2.findOne("1"));
     }
 
 
